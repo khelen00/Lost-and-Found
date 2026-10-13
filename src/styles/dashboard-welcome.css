@@ -1,0 +1,73 @@
+/* ========================================
+
+   DASHBOARD WELCOME SECTION
+
+\======================================== */
+
+.welcome {
+
+  position: relative;
+
+  overflow: hidden;
+
+  margin-bottom: 25px;
+
+  padding: clamp(25px, 4vw, 42px);
+
+  background:
+
+    radial-gradient(circle at 95% 0%,
+
+      rgb(95 133 255 / 20%),
+
+      transparent 36%),
+
+    linear-gradient(125deg, #172946, #111c31 75%);
+
+  border: 1px solid #30496f;
+
+  border-radius: 18px;
+
+  box-shadow: var(--shadow);
+
+}
+
+.welcome>p:first-child {
+
+  color: #9cbdff;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+}
+
+.welcome h2 {
+
+  max-width: 680px;
+
+  margin: 13px 0;
+
+  color: #fff;
+
+  font-size: clamp(25px, 3.5vw, 36px);
+
+  font-weight: 800;
+
+  line-height: 1.2;
+
+  letter-spacing: -1.2px;
+
+}
+
+.welcome p {
+
+  max-width: 620px;
+
+  color: #b7c6dc;
+
+  line-height: 1.8;
+
+}

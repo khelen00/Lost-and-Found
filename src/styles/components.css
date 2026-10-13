@@ -1,0 +1,127 @@
+/* ========================================
+   BUTTONS
+\======================================== */
+
+.blue {
+  margin: 12px 9px 0 0;
+  color: #fff;
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.blue:hover {
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.green {
+  margin: 12px 9px 0 0;
+  color: #e7fff4;
+  background: #176b4b;
+  border-color: #278b64;
+}
+
+.green:hover {
+  background: #1c8059;
+  border-color: #37a879;
+  transform: translateY(-1px);
+}
+
+.secondary {
+  margin: 12px 0 0;
+  color: #dce5f4;
+  background: #202d43;
+  border-color: #34435c;
+}
+
+.secondary:hover {
+  color: #fff;
+  background: #2a3a55;
+  border-color: #506482;
+}
+
+.delete-button {
+  margin-top: 10px;
+  color: #ffdadd;
+  background: #54202a;
+  border-color: #7d3441;
+}
+
+.delete-button:hover {
+  background: #752b38;
+  border-color: #a64252;
+
+}
+
+/* ========================================
+
+   DASHBOARD SUMMARY CARDS
+
+\======================================== */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.card {
+  min-width: 0;
+  margin-bottom: 20px;
+  padding: 24px;
+  background: linear-gradient(145deg, #131e32, #10192a);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 6px 20px rgb(0 0 0 / 8%);
+}
+
+.cards .card {
+  margin-bottom: 0;
+}
+
+.card h2,
+.card h3 {
+  margin-top: 0;
+  color: #f0f4fc;
+
+}
+
+.card h2 {
+  letter-spacing: -0.5px;
+}
+
+.cards .card h2 {
+  margin-bottom: 5px;
+  font-size: 32px;
+}
+
+.card h3 {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.card p {
+  color: #aab8cc;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+
+.card span:not(.tag) {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.clickable {
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.clickable:hover {
+  background: #17243a;
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+}

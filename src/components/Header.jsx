@@ -13,7 +13,7 @@ const pageDescriptions = {
   "Admin Panel": "Review claims for items you reported as found.",
 };
 
-function Header({ page, user }) {
+function Header({ page, user, logout }) {
   const userName = user?.name || "Student";
   const initial = userName.charAt(0).toUpperCase();
   const userId = user?.id || user?._id;
@@ -55,7 +55,7 @@ function Header({ page, user }) {
         if (!cancelled) {
           setNotificationError(
             error.response?.data?.message ||
-              "Could not load notifications."
+            "Could not load notifications."
           );
         }
       }
@@ -115,7 +115,7 @@ function Header({ page, user }) {
     } catch (error) {
       setNotificationError(
         error.response?.data?.message ||
-          "Could not mark notification as read."
+        "Could not mark notification as read."
       );
     } finally {
       setUpdatingId(null);
@@ -125,7 +125,7 @@ function Header({ page, user }) {
   return (
     <header className="app-header">
       <div className="header-content">
-        <p className="subtitle">COLLEGE LOST & FOUND</p>
+        <p className="subtitle">FindIt</p>
 
         <h1>{page}</h1>
 
@@ -133,6 +133,29 @@ function Header({ page, user }) {
       </div>
 
       <div className="header-user">
+        <button
+          type="button"
+          className="mobile-header-logout"
+          onClick={logout}
+          aria-label="Log out"
+          title="Log out"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            width="23"
+            height="23"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M10 17l5-5-5-5" />
+            <path d="M15 12H3" />
+            <path d="M12 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-6" />
+          </svg>
+        </button>
         <div className="notification-wrapper">
           <button
             type="button"
@@ -176,9 +199,8 @@ function Header({ page, user }) {
                   <p>
                     {unreadCount === 0
                       ? "You're all caught up."
-                      : `${unreadCount} unread notification${
-                          unreadCount === 1 ? "" : "s"
-                        }`}
+                      : `${unreadCount} unread notification${unreadCount === 1 ? "" : "s"
+                      }`}
                   </p>
                 </div>
 
@@ -208,21 +230,19 @@ function Header({ page, user }) {
               ) : (
                 <div className="notification-list">
                   {notifications.map((notification) => (
-                    
-                <button
-                type="button"
-                className={`notification-entry ${
-                notification.isRead ? "" : "is-unread"
-                }`}
-                key={notification._id}
-                onClick={() => markAsRead(notification)}
-                disabled={updatingId === notification._id}
-                >
+
+                    <button
+                      type="button"
+                      className={`notification-entry ${notification.isRead ? "" : "is-unread"
+                        }`}
+                      key={notification._id}
+                      onClick={() => markAsRead(notification)}
+                      disabled={updatingId === notification._id}
+                    >
 
                       <span
-                        className={`notification-dot ${
-                          notification.isRead ? "is-read" : ""
-                        }`}
+                        className={`notification-dot ${notification.isRead ? "is-read" : ""
+                          }`}
                       />
 
                       <span className="notification-entry-content">
@@ -233,8 +253,8 @@ function Header({ page, user }) {
                         <span className="notification-time">
                           {notification.createdAt
                             ? new Date(
-                                notification.createdAt
-                              ).toLocaleString()
+                              notification.createdAt
+                            ).toLocaleString()
                             : "Recently"}
                         </span>
 

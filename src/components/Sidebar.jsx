@@ -1,4 +1,4 @@
-
+import FindItLogo from "./FindItLogo";
 const menuGroups = [
   {
     title: "OVERVIEW",
@@ -36,9 +36,10 @@ function Sidebar({ page, setPage, user, logout }) {
   return (
     <aside className="sidebar">
       <div className="sidebar-brand">
-        <div className="brand-mark" aria-hidden="true">
-          <span>CF</span>
+        <div className="brand-mark">
+        <FindItLogo size={38} />
         </div>
+        
 
         <div className="brand-copy">
           <h2>Campus</h2>

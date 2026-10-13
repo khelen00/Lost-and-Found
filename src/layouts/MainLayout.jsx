@@ -22,7 +22,7 @@ function MainLayout({ page, setPage, user, logout, children }) {
       />
 
       <main className="main">
-        <Header page={page} user={user} />
+        <Header page={page} user={user} logout={logout} />
 
         <div className="main-content" key={page}>
           {children}
